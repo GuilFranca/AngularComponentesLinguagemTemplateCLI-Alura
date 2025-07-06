@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+/* Importando font Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Importando font Zen Dots */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 
 body {
     background: linear-gradient(180deg, #3D88FD 0%, #E7F1FF 100%);

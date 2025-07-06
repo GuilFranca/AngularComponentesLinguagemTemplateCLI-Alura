@@ -1,5 +1,12 @@
 <app-container>
-  
+
   <app-cabecalho></app-cabecalho>
+
+  <!-- Percorre o string e para cada letra irá criar um separador -->
+  @for (letra of alfabeto; track letra) {
+    <app-separador>
+      {{letra}}
+    </app-separador>
+  }
 
 </app-container>
