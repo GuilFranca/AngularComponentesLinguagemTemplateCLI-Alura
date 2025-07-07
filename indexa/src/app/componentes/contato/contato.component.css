@@ -1,0 +1,26 @@
+.contato ul {
+    display: flex;
+    padding: 0;
+    align-items: center; /* Alinha no centro verticalmente */
+    justify-content: space-between; /* espaçamento com o primeiro elemento no início e o último colado no canto */
+    flex-wrap: wrap; /* Quebra linha caso o conteúdo não caiba*/ 
+}
+
+.contato ul li {
+    list-style: none;
+
+    /* Paragraph */
+    color: #212529;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 27px */
+    /* border: 1px solid red; */
+}
+
+.contato ul li button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
