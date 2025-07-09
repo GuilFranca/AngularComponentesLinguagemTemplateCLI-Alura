@@ -2,6 +2,12 @@
 
   <app-cabecalho></app-cabecalho>
 
+  <input 
+    type="search"
+    placeholder="Digite para buscar"
+    [(ngModel)]='filtroPorTexto'
+  >
+
   <!-- Percorre o string e para cada letra irá criar um separador -->
   @for (letra of alfabeto; track letra) {
 

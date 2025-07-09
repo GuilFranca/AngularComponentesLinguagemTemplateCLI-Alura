@@ -5,6 +5,7 @@ import { ContainerComponent } from './componentes/container/container.component'
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { SeparadorComponent } from './componentes/separador/separador.component';
 import { ContatoComponent } from './componentes/contato/contato.component';
+import { FormsModule } from '@angular/forms';
 
 interface Contato {
   id: number
@@ -23,18 +24,33 @@ import agenda from './agenda.json';
     ContainerComponent, 
     CabecalhoComponent, 
     SeparadorComponent,
-    ContatoComponent
+    ContatoComponent,
+    FormsModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  // title = 'indexa';
+  title = 'indexa';
+
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz';
   contatos: Contato[] = agenda;
 
+  filtroPorTexto : string = '';
+  filtrarContatosPorTexto(): Contato[] {
+
+    if (!this.filtroPorTexto) {
+      return this.contatos;
+    }
+
+    return this.contatos.filter(contato => {
+      return contato.nome.toLowerCase().normalize("NFD").includes(this.filtroPorTexto.toLowerCase())
+    }) 
+
+  }
+
   filtrarContatosPorLetraInicial(letra: string) : Contato[] {
-    return this.contatos.filter( contato => {
+    return this.filtrarContatosPorTexto().filter( contato => {
       return contato.nome.toLowerCase().normalize("NFD").startsWith(letra)
     } )
   }
